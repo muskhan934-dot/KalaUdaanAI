@@ -1,4 +1,6 @@
 🪷 KalaUdaan AI
+
+
 AI-Powered Digital Marketplace & Business Assistant for Traditional Artisans
 Empowering India's artisans with Artificial Intelligence, digital commerce, multilingual assistance, and modern technology.
 
