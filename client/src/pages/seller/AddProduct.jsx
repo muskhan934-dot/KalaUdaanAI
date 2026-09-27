@@ -1,0 +1,10 @@
+import { useState } from "react";
+import { Camera, ImagePlus, Sparkles, Mic, WandSparkles, CheckCircle2 } from "lucide-react";
+export default function AddProduct(){
+ const [analyzed,setAnalyzed]=useState(false); const [voice,setVoice]=useState(false);
+ return <main className="section add-product"><div className="dash-top"><div><span className="eyebrow">SELLER STUDIO · 02</span><h1>Create a product.</h1><p>Photo first. Kalaudaan AI handles the heavy lifting.</p></div></div>
+ <div className="product-builder"><div className="upload-product"><div className="product-drop"><ImagePlus size={34}/><h2>Upload product image</h2><p>Drag & drop or choose from gallery</p><div><button className="btn secondary"><ImagePlus/> Gallery</button><button className="btn secondary"><Camera/> Camera</button></div></div><button className="btn primary full" onClick={()=>setAnalyzed(true)}><Sparkles/> Analyze with AI</button></div>
+ <div className="listing-form"><label>Product name<input defaultValue={analyzed?"Handcrafted Terracotta Vase":""} placeholder="AI will suggest this"/></label><label>Description<div className="textarea-wrap"><textarea defaultValue={analyzed?"A handcrafted terracotta vase inspired by traditional Indian pottery, shaped and finished by hand.":""} placeholder="Describe your product..."/><button className={voice?"voice-on":""} onClick={()=>setVoice(!voice)}><Mic/></button></div></label><div className="two-col"><label>Category<input defaultValue={analyzed?"Pottery":""}/></label><label>Material<input defaultValue={analyzed?"Terracotta":""}/></label></div><div className="two-col"><label>Price<input defaultValue={analyzed?"899":""}/></label><label>Tags<input defaultValue={analyzed?"handmade, pottery, terracotta":""}/></label></div>
+ {analyzed && <div className="ai-suggestions"><WandSparkles/><div><b>AI suggestions ready</b><span>Price: ₹850–₹1,100 · 8 tags · 3 translations</span></div><CheckCircle2/></div>}<button className="btn primary full">Preview & publish</button></div></div>
+ </main>
+}
